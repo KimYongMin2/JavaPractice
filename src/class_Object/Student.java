@@ -12,6 +12,14 @@ public class Student {
         System.out.println("사는 곳 : " + address);
     }
 
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String name){
+        studentName = name;
+    }
+
     public static void main(String[] args) {
         Student student_01 = new Student();
         student_01.studentId = 100101;
