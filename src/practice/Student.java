@@ -1,44 +1,46 @@
 package practice;
 
+
 import java.util.Scanner;
 
 public class Student {
-    int studentID;
-    int grade;
-    int birth;
     String studentName;
-    String address;
-    String dep;
+    int studentBirth;
+    StudentInfo studentInfo;
 
-    public void setStudentName(String studentName){
-        this.studentName = studentName;
+
+    public Student(String name, int birth){
+        studentName = name;
+        studentBirth = birth;
+        studentInfo = new StudentInfo();
     }
 
-    public void setGrade(int grade){
-        this.grade = grade;
-    }
+    public void setStudentInfo(){
+        studentInfo.setStudentName(studentName);
+        studentInfo.setBirth(studentBirth);
 
-    public void setBirth(int birth) {
-        this.birth =birth;
-    }
+        System.out.println("주소를 입력해주세요");
+        Scanner address = new Scanner(System.in);
+        String studentAddress = String.valueOf(address.nextLine());
+        studentInfo.setAddress(studentAddress);
 
-    public void setStudentID() {
-        studentID = birth+21000000;
-    }
+        System.out.println("학과를 입력해주세요");
+        Scanner dep = new Scanner(System.in);
+        String studentDep = String.valueOf(dep.nextLine());
+        studentInfo.setDep(studentDep);
 
-    public void setAddress(String address){
-        this.address = address;
-    }
+        System.out.println("학년를 입력해주세요");
+        Scanner grade = new Scanner(System.in);
+        int studentGrade = Integer.valueOf(grade.nextLine());
+        studentInfo.setGrade(studentGrade);
 
-    public void setDep(String dep){
-        this.dep = dep;
+        studentInfo.setStudentID();
     }
-
 
     public void showStudentInfo(){
-        System.out.println("학과 : " + dep + "\n학번 : " + studentID);
-        System.out.println("학년 : " + grade + "\n이름 : " +studentName);
-        System.out.println("사는 곳 : " + address);
+        System.out.println("학과 : " + studentInfo.getDep() + "\n학번 : " + studentInfo.getStudentID());
+        System.out.println("학년 : " + studentInfo.getGrade() + "\n이름 : " +studentInfo.getStudentName());
+        System.out.println("사는 곳 : " + studentInfo.getAddress());
     }
 
 }
