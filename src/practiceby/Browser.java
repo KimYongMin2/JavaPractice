@@ -19,24 +19,20 @@ public class Browser {
         b = new Internet();
     }
 
-    public void setInternetA(){
+    public void setInternetA(Scanner sc){
         System.out.println("인터넷창 A의 이름을 입력해주세요");
-        Scanner iName = new Scanner(System.in);
-        String internetName = String.valueOf(iName.nextLine());
+        String internetName = sc.nextLine();
         a.setInternetName(internetName);
         System.out.println("인터넷창 A의 주소를 입력해주세요");
-        Scanner address = new Scanner(System.in);
-        String internetAddress = String.valueOf(address.nextLine());
+        String internetAddress = sc.nextLine();
         a.setIpAddress(internetAddress);
     }
-    public void setInternetB(){
+    public void setInternetB(Scanner sc){
         System.out.println("인터넷창 B의 이름을 입력해주세요");
-        Scanner iName = new Scanner(System.in);
-        String internetName = String.valueOf(iName.nextLine());
+        String internetName = sc.nextLine();
         b.setInternetName(internetName);
         System.out.println("인터넷창 B의 주소를 입력해주세요");
-        Scanner address = new Scanner(System.in);
-        String internetAddress = String.valueOf(address.nextLine());
+        String internetAddress = sc.nextLine();
         b.setIpAddress(internetAddress);
     }
 
