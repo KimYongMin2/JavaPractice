@@ -1,46 +1,43 @@
 package practice;
 
-
-import java.util.Scanner;
-
 public class Student {
     String studentName;
-    int studentBirth;
     StudentInfo studentInfo;
 
-
-    public Student(String name, int birth){
-        studentName = name;
-        studentBirth = birth;
+    public Student(String name){
+        this.studentName = name;
         studentInfo = new StudentInfo();
     }
 
-    public void setStudentInfo(){
+    public void setStudentInfo(int studentId, String studentName, int studentGrade,
+                               String studentDep, String studentAddress, String studentTel){
         studentInfo.setStudentName(studentName);
-        studentInfo.setBirth(studentBirth);
-
-        System.out.println("주소를 입력해주세요");
-        Scanner address = new Scanner(System.in);
-        String studentAddress = String.valueOf(address.nextLine());
-        studentInfo.setAddress(studentAddress);
-
-        System.out.println("학과를 입력해주세요");
-        Scanner dep = new Scanner(System.in);
-        String studentDep = String.valueOf(dep.nextLine());
-        studentInfo.setDep(studentDep);
-
-        System.out.println("학년를 입력해주세요");
-        Scanner grade = new Scanner(System.in);
-        int studentGrade = Integer.valueOf(grade.nextLine());
-        studentInfo.setGrade(studentGrade);
-
-        studentInfo.setStudentID();
+        studentInfo.setStudentDep(studentDep);
+        studentInfo.setStudentId(studentId);
+        studentInfo.setStudentGrade(studentGrade);
+        studentInfo.setStudentTel(studentTel);
+        studentInfo.setStudentAddress(studentAddress);
     }
 
     public void showStudentInfo(){
-        System.out.println("학과 : " + studentInfo.getDep() + "\n학번 : " + studentInfo.getStudentID());
-        System.out.println("학년 : " + studentInfo.getGrade() + "\n이름 : " +studentInfo.getStudentName());
-        System.out.println("사는 곳 : " + studentInfo.getAddress());
+        System.out.println("학과 : " + studentInfo.getStudentDep() + " 학번 : " + studentInfo.getStudentId());
+        System.out.println("학년 : " + studentInfo.getStudentGrade() + " 이름 : " + studentInfo.getStudentName());
+        System.out.println("전화번호 : " + studentInfo.getStudentTel());
+        System.out.println("주소 : " + studentInfo.getStudentAddress());
     }
+
+    public int studentInfoCheck(){
+        if (studentInfo.ddeng == true){
+            System.out.println("정상입력되었습니다.");
+            System.out.println("");
+            return 1;
+        }
+        else{
+            System.out.println("정상입력되지않았습니다.");
+            System.out.println("");
+            return 0;
+        }
+    }
+
 
 }

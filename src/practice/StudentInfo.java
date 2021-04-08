@@ -1,36 +1,15 @@
 package practice;
 
 public class StudentInfo {
-    private int studentID;
-    private int grade;
-    int birth;
     String studentName;
-    private String address;
-    private String dep;
-
-    public int getStudentID() {
-        return studentID;
-    }
-
-    public void setStudentID() {
-        this.studentID = this.birth + 21000000;
-    }
-
-    public int getGrade() {
-        return grade;
-    }
-
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
-    public int getBirth() {
-        return birth;
-    }
-
-    public void setBirth(int birth) {
-        this.birth = birth;
-    }
+    int studentId;
+    String studentDep;
+    int depCode;
+    int studentGrade;
+    String studentAddress;
+    String studentTel;
+    int totalNum=1;
+    boolean ddeng = false;
 
     public String getStudentName() {
         return studentName;
@@ -40,21 +19,64 @@ public class StudentInfo {
         this.studentName = studentName;
     }
 
-    public String getAddress() {
-        return address;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+        if (studentId==0) {
+            this.studentId = 2021000000 + (this.depCode * 1000) + totalNum;
+        }
     }
 
-    public String getDep() {
-        return dep;
+    public String getStudentDep() {
+        return studentDep;
     }
 
-    public void setDep(String dep) {
-        this.dep = dep;
+    public void setStudentDep(String studentDep) {
+        switch (studentDep){
+            case "전자과" :
+                depCode = 124;
+                break;
+            case "수학과" :
+                depCode = 126;
+                break;
+            default:
+                depCode = 000;
+                ddeng = false;
+        }
+        this.studentDep = studentDep;
+
     }
 
+    public int getStudentGrade() {
+        return studentGrade;
+    }
 
+    public void setStudentGrade(int studentGrade) {
+        this.studentGrade = studentGrade;
+        if ((2021000000 + (this.depCode * 1000) + totalNum - studentId)==studentGrade-1){
+            ddeng = true;
+        }
+        else{
+            ddeng = false;
+        }
+    }
+
+    public String getStudentAddress() {
+        return studentAddress;
+    }
+
+    public void setStudentAddress(String studentAddress) {
+        this.studentAddress = studentAddress;
+    }
+
+    public String getStudentTel() {
+        return studentTel;
+    }
+
+    public void setStudentTel(String studentTel) {
+        this.studentTel = studentTel;
+    }
 }
