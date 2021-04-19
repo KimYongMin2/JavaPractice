@@ -4,19 +4,24 @@ public class Student {
     String studentName;
     StudentInfo studentInfo;
 
-    public Student(String name){
-        this.studentName = name;
+    public Student(){
         studentInfo = new StudentInfo();
     }
 
     public void setStudentInfo(int studentId, String studentName, int studentGrade,
                                String studentDep, String studentAddress, String studentTel){
         studentInfo.setStudentName(studentName);
+        System.out.println("여기까진 됨1");
         studentInfo.setStudentDep(studentDep);
+        System.out.println("여기까진 됨2");
         studentInfo.setStudentId(studentId);
+        System.out.println("여기까진 됨1");
         studentInfo.setStudentGrade(studentGrade);
+        System.out.println("여기까진 됨2");
         studentInfo.setStudentTel(studentTel);
+        System.out.println("여기까진 됨1");
         studentInfo.setStudentAddress(studentAddress);
+        System.out.println("여기까진 됨2");
     }
 
     public void showStudentInfo(){
@@ -30,6 +35,7 @@ public class Student {
         if (studentInfo.ddeng == true){
             System.out.println("정상입력되었습니다.");
             System.out.println("");
+            StudentInfo.totalNum += 1;
             return 1;
         }
         else{

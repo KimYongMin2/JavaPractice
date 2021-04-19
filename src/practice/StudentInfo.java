@@ -8,7 +8,7 @@ public class StudentInfo {
     int studentGrade;
     String studentAddress;
     String studentTel;
-    int totalNum=1;
+    static int totalNum=1;
     boolean ddeng = false;
 
     public String getStudentName() {
